@@ -54,8 +54,8 @@ void dijkstra(int graph[n][n], int src)
 	{
 		dist[i]=10000000;
 		selected[i]=0;
-		parent[0]=-1;
 	}
+	parent[0]=-1;
 	dist[src]=0;
 	for(i=0;i<n-1;i++)
 	{
@@ -98,7 +98,7 @@ int main()
                         { 0, 0, 0, 0, 0, 2, 0, 1, 6 }, 
                         { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, 
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } }; 
-    dijkstra(graph, 0);
+    dijkstra(graph,0);
     return 0;
 	//dijkstra(graph,n,0); 
 }
