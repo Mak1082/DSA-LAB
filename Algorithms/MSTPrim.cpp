@@ -50,6 +50,12 @@ void MSTPrim(int graph[n][n])
 			}
 		}
 	}
+	cout<<"Parent array:"<<endl;
+	for(i=0;i<n;i++)
+	{
+		cout<<parent[i]<<" ";
+	}
+	cout<<endl;
 	printMST(graph,parent);
 }
 int main()
@@ -62,11 +68,13 @@ int main()
                         { 0, 0, 5, 6, 0, 2 }, 
                         { 0, 0, 4, 0, 2, 0 },};
     MSTPrim(graph);
+    for(i=0;i<6;i++)
+    {
+    	for(j=0;j<6;j++)
+    	{
+    		cout<<graph[i][j]<<" ";
+		}
+		cout<<endl;
+	}
     return 0;
-    /*{ { 0, 3, 0, 1, 0, 0 }, 
-                        { 3, 0, 1, 3, 0, 0 }, 
-                        { 0, 1, 0, 1, 5, 4 }, 
-                        { 0, 3, 1, 0, 6, 0 }, 
-                        { 0, 0, 5, 6, 0, 2 }, 
-                        { 0, 0, 4, 0, 2, 0 },}; */
 }
