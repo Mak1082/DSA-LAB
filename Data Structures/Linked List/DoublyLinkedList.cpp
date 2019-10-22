@@ -41,14 +41,23 @@ currentNode->next=newNode;
 
 void display(struct Node* l)
 {
-cout<<"the List element are :: ";
-struct Node* p= l->next;
-while (p!= NULL)
-{
-cout<< p->e << "->";
-p= p->next;
-}
-cout<<"\n";
+	cout<<"The List element are :: "<<endl;
+	struct Node* p= l->next;
+	cout<<"Using next pointers"<<endl;
+	while (p->next!= NULL)
+	{
+		cout<< p->e << "->";
+		p= p->next;
+	}
+	cout<<p->e;
+	cout<<"\n";
+	cout<<"Using prev pointers"<<endl;
+	while(p->prev!=l)
+	{
+		cout<<p->e<<"->";
+		p=p->prev;
+	}
+	cout<<p->e;
 }
 
 void deleteX(struct Node* l, int x)

@@ -79,33 +79,33 @@ void deleteX(struct Node* l, int x)
 
 void displayReverse(struct Node* l)
 {
-struct Node* p=l->next;
-while(p->next!=NULL)
-{
-p=p->next;
-}
-while(p->prev!=NULL)
-{
-cout<<p->e<<"->";
-p=p->prev;
-}
-cout<<"\n";
+	struct Node* p=l->next;
+	while(p->next!=NULL)
+	{
+	p=p->next;
+	}
+	while(p->prev!=NULL)
+	{
+	cout<<p->e<<"->";
+	p=p->prev;
+	}
+	cout<<"\n";
 }
 
 void insertSecondLast(struct Node* l, int x)
 {
-struct Node* p=l->next;
-while(p->next->next!=NULL)
-{
-p=p->next;
-}
-struct Node* tmpCell;
-tmpCell=new Node;
-tmpCell->e=x;
-tmpCell->next=p->next;
-tmpCell->prev=p;
-p->next->prev=tmpCell;
-p->next=tmpCell;
+	struct Node* p=l->next;
+	while(p->next->next!=NULL)
+	{
+	p=p->next;
+	}
+	struct Node* tmpCell;
+	tmpCell=new Node;
+	tmpCell->e=x;
+	tmpCell->next=p->next;
+	tmpCell->prev=p;
+	p->next->prev=tmpCell;
+	p->next=tmpCell;
 }
 
 int main()

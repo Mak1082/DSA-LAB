@@ -9,20 +9,21 @@ struct Node{
 
 void pushStart(int x,string n,struct Node *l)
 {
-struct Node *tmpcell;
-tmpcell = new Node;
-tmpcell->age = x;
-tmpcell->name=n;
-struct Node* p=l->next;
-if(l->next!=NULL)
-{
-tmpcell->next=l->next;
-l->next=tmpcell;
-}
-else{
-tmpcell->next = l;
-l->next = tmpcell;
-}
+	struct Node *tmpcell;
+	tmpcell = new Node;
+	tmpcell->age = x;
+	tmpcell->name=n;
+	struct Node* p=l->next;
+	if(l->next!=NULL)
+	{
+		tmpcell->next=l->next;
+		l->next=tmpcell;
+	}
+	else
+	{
+		tmpcell->next = l;
+		l->next = tmpcell;
+	}
 }
 
 void display(struct Node* l)

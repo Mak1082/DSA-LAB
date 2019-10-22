@@ -3,15 +3,21 @@ using namespace std;
 
 void selectionSort(int* a, int n)
 {
+	bool flag;
 	int i,j,min;
 	for(i=0;i<n;i++)
 	{
 		min=i;
+		flag=false;
 		for(j=i+1;j<n;j++)
 		{
-			if(a[j]<a[min]) min=j;
+			if(a[j]<a[min])
+			{
+				min=j;
+				flag=true;
+			}
 		}
-		swap(a[i],a[min]);
+		if(flag) swap(a[i],a[min]);
 	}
 }
 

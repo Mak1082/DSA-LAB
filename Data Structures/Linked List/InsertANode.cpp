@@ -14,16 +14,10 @@ Position next;
 
 void insertAtBeginning(int x,List l)
 {
-Position tmpcell;
-tmpcell = new Node;
-if (tmpcell == NULL)
-cout<<"Memory Out of space\n";
-else
-{
+Position tmpcell=new Node;
 tmpcell->e = x;
 tmpcell->next = l->next;
 l->next = tmpcell;
-}
 }
 
 void display(List l)
@@ -79,17 +73,34 @@ void insertBeforeIndex(List l, int index, int y)
 
 void deleteAtIndex(List l, int index)
 {
-	Position currentNode=new Node;
-	Position tmpCell=new Node;
-	currentNode=l->next;
-	int i=0;
-	while(i!=(index-1))
+	if(l->next!=NULL)
 	{
-		currentNode=currentNode->next;
+	
+		Position currentNode=new Node;
+		Position tmpCell=new Node;
+		currentNode=l->next;
+		int i=0;
+		if(index!=0)
+		{
+			while(i!=(index-1))
+			{
+				currentNode=currentNode->next;
+				i++;
+			}
+			tmpCell=currentNode->next;
+			currentNode->next=currentNode->next->next;
+			free(tmpCell);
+		}
+		else
+		{
+			tmpCell=l->next;
+			l->next=tmpCell->next;
+		}
 	}
-	tmpCell=currentNode->next;
-	currentNode->next=currentNode->next->next;
-	free(tmpCell);
+	else
+	{
+		cout<<"List is empty";
+	}
 }
 
 void findAndReplace(List l, int x, int y)
@@ -156,7 +167,7 @@ void reverse(List l)
 	l->next=p;
 }
 
-main()
+int main()
 {
 int x,pos,ch,i;
 List l;
