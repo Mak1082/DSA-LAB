@@ -44,7 +44,7 @@ void MSTPrim(int graph[n][n])
 		selected[u]=1;
 		for(j=0;j<n;j++)
 		{
-			if(graph[u][j] && selected[j]==0 &&graph[u][j]<key[j])
+			if(graph[u][j] && selected[j]==0 && graph[u][j]<key[j])
 			{
 				parent[j]=u; key[j]=graph[u][j];
 			}

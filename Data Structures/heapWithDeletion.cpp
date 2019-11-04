@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 int parentIndex(int index)
 {
 	return (index/2); 

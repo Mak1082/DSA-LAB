@@ -15,12 +15,8 @@ void maximumBookings(vector<int>arr,vector<int>depart,int k,int n)
 		{
 			if(depart[j]>depart[j+1])
 			{
-				t1=depart[j];
-				depart[j]=depart[j+1];
-				depart[j+1]=t1;
-				t2=arr[j];
-				arr[j]=arr[j+1];
-				arr[j+1]=t2;
+				swap(depart[j],depart[j+1]);
+				swap(arr[j],arr[j+1]);
 			}
 		}
 	}
@@ -35,7 +31,6 @@ void maximumBookings(vector<int>arr,vector<int>depart,int k,int n)
 	{
 		if(arr[i]>=depart[m] || k>0)
 		{
-			
 			cout<<i+1<<" ";
 			k=k-1; c=1;
 		}

@@ -55,6 +55,7 @@ void preOrder(struct Node* root)
             inOrder(root->right);
      }
 }
+
 struct Node * leftMost(struct Node* node) 
 {  
     while (node->left != NULL) 
@@ -96,7 +97,6 @@ struct Node* deleteNode(struct Node* root, int x)
 	}	
 	return root;
 }
-
 
 
 int main()

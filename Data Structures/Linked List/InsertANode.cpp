@@ -75,7 +75,6 @@ void deleteAtIndex(List l, int index)
 {
 	if(l->next!=NULL)
 	{
-	
 		Position currentNode=new Node;
 		Position tmpCell=new Node;
 		currentNode=l->next;

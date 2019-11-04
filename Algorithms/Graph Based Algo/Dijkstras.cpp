@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-const int n=9;
+const int n=4;
 
 int min(int dist[], int selected[])
 {
@@ -34,18 +34,18 @@ void printPath(int source[], int j)
     cout<<endl;
 }
 
-void printDist(int dist[], int source[])
+void printDist(int dist[], int source[],int src)
 {
     int i,j;
     cout<<"Start \t End \t Distance \t Path"<<endl;
-    for(i=1;i<n;i++)
+    for(i=0;i<n;i++)
     {
-        cout<<"0 \t "<<i<<"\t "<<dist[i]<<"\t\t";
+        cout<<src<<" \t "<<i<<"\t "<<dist[i]<<"\t\t";
         printPath(source,i);
     }
 }
 
-void dijkstra(int graph[n][n])
+void dijkstra(int graph[n][n], int src)
 {
     int dist[n], i,j,u, selected[n], source[n];
     for(i=0;i<n;i++)
@@ -53,9 +53,9 @@ void dijkstra(int graph[n][n])
         dist[i]=10000000;
         selected[i]=0;
     }
-    source[0]=-1;
-    dist[0]=0;
-    for(int i; i<n; i++)
+    source[src]=-1;
+    dist[src]=0;
+    for(int i=0; i<n; i++)
     {
         u=min(dist,selected);
         selected[u]=1;
@@ -74,21 +74,20 @@ void dijkstra(int graph[n][n])
     	cout<<i<<":"<<source[i]<<" , ";
 	}
 	cout<<endl;
-    printDist(dist, source);
+    printDist(dist, source,src);
 }
 
 int main()
 {
-    int graph[n][n] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 }, 
-                        { 4, 0, 8, 0, 0, 0, 0, 11, 0 }, 
-                        { 0, 8, 0, 7, 0, 4, 0, 0, 2 }, 
-                        { 0, 0, 7, 0, 9, 14, 0, 0, 0 }, 
-                        { 0, 0, 0, 9, 0, 10, 0, 0, 0 }, 
-                        { 0, 0, 4, 14, 10, 0, 2, 0, 0 }, 
-                        { 0, 0, 0, 0, 0, 2, 0, 1, 6 }, 
-                        { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, 
-                        { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
-    dijkstra(graph);
+    int graph[n][n] = { { 0, 24, 3, 20  }, 
+                        { 24, 0, 0, 0  }, 
+                        { 3, 0, 0, 12 }, 
+                        { 20, 0, 12, 0 }, 
+                    	};
+    cout<<"Enter source"<<endl;
+    int src;
+	cin>>src;
+	dijkstra(graph,src);
     cout<<"\nGraph:"<<endl;
     for(int i=0;i<n;i++)
     {
@@ -101,4 +100,3 @@ int main()
     }
     return 0;
 }
-

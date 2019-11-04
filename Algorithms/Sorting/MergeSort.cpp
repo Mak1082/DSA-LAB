@@ -16,8 +16,8 @@ void merge(int arr[],int l, int m, int r)
     { 
         if (L[i] <= R[j]) 
         { 
-            arr[k] = L[i]; 
-            i++; 
+            arr[k] = L[i];
+            i++;
         } 
         else
         { 
@@ -50,7 +50,6 @@ void mergeSort(int a[], int l,int r)
 		merge(a,l,m,r);
 	}
 }
-
 
 void display(int a[], int n)
 {

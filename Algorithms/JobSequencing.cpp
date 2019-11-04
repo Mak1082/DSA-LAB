@@ -11,7 +11,7 @@ class Job
    void input()
    {
      cin>>id; cin>>dead; cin>>profit;
-   }  
+   }
 };
 
 void printJobScheduling(Job a[], int n)

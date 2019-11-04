@@ -6,8 +6,8 @@ using namespace std;
 
 // Graph class represents a directed graph 
 // using adjacency list representation 
-class Graph 
-{ 
+class Graph
+{
     public:
 	int V; // No. of vertices 
 
@@ -48,9 +48,12 @@ void Graph::DFSUtil(int v, bool visited[])
 	// Recur for all the vertices adjacent 
 	// to this vertex 
 	list<int>::iterator i; 
-	for (i = adj[v].begin(); i != adj[v].end(); ++i) 
+	for (i = adj[v].begin(); i != adj[v].end(); ++i)
+	{
+		cout<< *i<<endl;
 		if (!visited[*i]) 
-			DFSUtil(*i, visited); 
+			DFSUtil(*i, visited);
+	}
 } 
 
 // DFS traversal of the vertices reachable from v. 
