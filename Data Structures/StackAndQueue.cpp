@@ -38,12 +38,13 @@ void enqueue(char x,List queue)
 	newNode->next=NULL; newNode->e=x;
 	if(queue->next!=NULL)
 	{
-Position currentNode = queue->next;
-while(currentNode->next){
-    currentNode=currentNode->next;
-}
-currentNode->next=newNode;
-}
+		Position currentNode = queue->next;
+		while(currentNode->next)
+		{
+	    	currentNode=currentNode->next;
+		}
+		currentNode->next=newNode;
+	}
 else{
 	queue->next=newNode;
 }
@@ -80,10 +81,7 @@ for(i=0;i<s.length();i++)
 {
 ch=s[i];
 x=(int)ch;
-if(x>64 && x<91)
-{
-enqueue(s[i],queue);
-}
+if(x>64 && x<91) enqueue(s[i],queue);
 else if(ch=='*' || ch=='+' || ch=='-' || ch=='/')
 {
 	if(stack->next==NULL) push(s[i],stack);

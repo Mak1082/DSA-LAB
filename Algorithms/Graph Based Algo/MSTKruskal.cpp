@@ -61,7 +61,5 @@ int main()
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 	
 	MSTKruskal(graph); 
-
-  
     return 0;
 }

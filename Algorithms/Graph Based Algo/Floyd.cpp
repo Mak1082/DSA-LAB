@@ -69,6 +69,7 @@ int main()
                     {INF,INF,INF,INF,0,7,INF,INF},
                     {INF,INF,INF,INF,INF,0,INF,INF},
                     {INF,INF,INF,INF,INF,INF,0,INF},
-                    {1,INF,INF,INF,INF,3,4,0} };
+                    {1,INF,INF,INF,INF,3,4,0}
+					};
   floydAPSP(graph);
 }

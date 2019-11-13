@@ -36,7 +36,7 @@ class Graph
 						q.push_back(*j);
 						selected[*j]=1;
 					}
-				}	
+				}
 			}
 		}
 };

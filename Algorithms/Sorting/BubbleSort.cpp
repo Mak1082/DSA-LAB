@@ -7,7 +7,7 @@ void bubbleSort(int* a, int n)
 	for(i=0;i<n;i++)
 	{
 		flag=false;
-		for(j=0;j<n-i-1;j++)
+		for(j=0;j<n-i;j++)
 		{
 			if(a[j+1]<a[j])
 			{

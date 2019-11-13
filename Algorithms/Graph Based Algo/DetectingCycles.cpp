@@ -43,7 +43,7 @@ class Graph
 		bool *visited = new bool[V]; 
 	for (int i = 0; i < V; i++) 
 		visited[i] = false; 
- 
+
 	for (int u = 0; u < V; u++) 
 		if (!visited[u])  
 		if (checkCyclic(u, visited, -1)) 

@@ -119,6 +119,7 @@ void displayInOrderMin(int *H, int size)
 
 void pop(int* minH, int size)
 {
+	cout<<"X"<<minH[1]<<"X";
 	swap(minH[1],minH[size]);
 	int index=1;
 	size--;
@@ -160,10 +161,13 @@ int main()
 	display(minHeap,n);
 	cout<<"\nMax Heap:\n";
 	display(maxHeap,n);
-	cout<<"\nIn Sorted Order:\n";
-	displayInOrder(maxHeap,n);
-	cout<<"\nIn Sorted Order:\n";
-	displayInOrderMin(minHeap,n);
-	cout<<"X"<<maxHeap[1];
-	pop(maxHeap,n);
+//	cout<<"\nIn Sorted Order:\n";
+//	displayInOrder(maxHeap,n);
+//	cout<<"\nIn Sorted Order:\n";
+//	displayInOrderMin(minHeap,n);
+	//cout<<"X"<<maxHeap[1];
+//	pop(maxHeap,n);
+//	pop(maxHeap,n-1);
+//	pop(maxHeap,n-2);
+	for(int i=n;i>=1;i--) pop(minHeap,i);
 }

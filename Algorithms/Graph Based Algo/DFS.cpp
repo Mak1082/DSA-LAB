@@ -50,7 +50,6 @@ void Graph::DFSUtil(int v, bool visited[])
 	list<int>::iterator i; 
 	for (i = adj[v].begin(); i != adj[v].end(); ++i)
 	{
-		cout<< *i<<endl;
 		if (!visited[*i]) 
 			DFSUtil(*i, visited);
 	}
@@ -82,8 +81,8 @@ int main()
 	g.addEdge(2, 3); 
 	g.addEdge(3, 3); 
 
-			list<int>::iterator j;
-			cout<<"Connections:"<<endl;
+	list<int>::iterator j;
+	cout<<"Connections:"<<endl;
 	for(int i=0;i<4;i++)
 	{
 	    cout<<i<<":";
